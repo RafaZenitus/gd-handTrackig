@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://cjq51k30nv472"]
+
+[ext_resource type="Script" uid="uid://ca2k73hhkr2jf" path="res://coin.gd" id="1_i64fm"]
+[ext_resource type="Texture2D" uid="uid://be4u6qyjl0uu4" path="res://assets/coin2_20x20.png" id="2_11l1o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d14el"]
+atlas = ExtResource("2_11l1o")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ikuy"]
+atlas = ExtResource("2_11l1o")
+region = Rect2(40, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnlwo"]
+atlas = ExtResource("2_11l1o")
+region = Rect2(60, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jig8b"]
+atlas = ExtResource("2_11l1o")
+region = Rect2(80, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmuha"]
+atlas = ExtResource("2_11l1o")
+region = Rect2(100, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfxoj"]
+atlas = ExtResource("2_11l1o")
+region = Rect2(120, 0, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jsmju"]
+animations = [{
+"frames": [{
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_d14el")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_1ikuy")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_wnlwo")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_jig8b")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_xmuha")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_kfxoj")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s0mny"]
+size = Vector2(72, 72)
+
+[node name="Coin" type="Area2D"]
+script = ExtResource("1_i64fm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_jsmju")
+animation = &"spin"
+frame_progress = 0.0698661
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_s0mny")

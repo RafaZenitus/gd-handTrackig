@@ -13,9 +13,10 @@ config_version=5
 config/name="P.O.S.E"
 run/main_scene="uid://bgj03ik4lwj84"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://chhrxavrpxyue"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="viewport"
