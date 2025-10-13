@@ -4,6 +4,8 @@ var server := TCPServer.new()
 var client : StreamPeerTCP
 var buffer := ""
 
+var venv_dir = "venv_godot/"
+
 @onready var viewport_size := get_viewport().get_visible_rect().size
 
 @onready var left_hand: Hand = $Left_
@@ -12,6 +14,9 @@ var buffer := ""
 @export var coin_scene: PackedScene 
 
 var coin_patterns: Dictionary = {
+	#-----------------------------#
+	#       Movimentos em C       #
+	#-----------------------------#
 	"C_DOWN": {
 		"left": [
 			Vector2(350, 300), Vector2(300, 550), Vector2(350, 800)
@@ -27,7 +32,45 @@ var coin_patterns: Dictionary = {
 		"right": [
 			Vector2(1500, 800), Vector2(1550, 550), Vector2(1500, 300)
 		]
-	}
+	},
+	#-----------------------------#
+	#   Movimentos Horizontais    #
+	#-----------------------------#
+	"H_UP": {
+		"left": [
+			Vector2(250, 150), Vector2(750, 150), Vector2(1250, 150), Vector2(1700, 150), 
+		],
+		"right": [
+			Vector2(1700, 150), Vector2(1250, 150), Vector2(750, 150), Vector2(250, 150), 
+		]
+	},
+	"H_DOWN": {
+		"left": [
+			Vector2(250, 850), Vector2(750, 850), Vector2(1250, 850), Vector2(1700, 850), 
+		],
+		"right": [
+			Vector2(1700, 850), Vector2(1250, 850), Vector2(750, 850), Vector2(250, 850), 
+		]
+	},
+	#-----------------------------#
+	#     Movimentos Verticais    #
+	#-----------------------------#
+	"V_UP": {
+		"left": [
+			Vector2(250, 150), Vector2(250, 500), Vector2(250, 850) 
+		],
+		"right": [
+			Vector2(1700, 850), Vector2(1700, 500), Vector2(1700, 150)
+		]
+	},
+	"V_DOWN": {
+		"left": [
+			Vector2(250, 150), Vector2(250, 500), Vector2(250, 850)
+		],
+		"right": [
+			Vector2(1700, 850), Vector2(1700, 500), Vector2(1700, 150)
+		]
+	},
 }
 
 func _ready():
@@ -37,25 +80,25 @@ func _ready():
 		print("Servidor TCP ouvindo na porta ", port)
 	else:
 		print("Erro ao iniciar o servidor: ", error)
-		
+	
 	# Atraso de início
-	await get_tree().create_timer(2.0).timeout
+	#await get_tree().create_timer(5.0).timeout
 	
-	
+
 	# C descendo Esquerda
-	spawn_pattern("C_DOWN", true)
+	spawn_pattern("V_DOWN", true)
 	await get_tree().create_timer(4.0).timeout
 	
 	# C descendo Direita
-	spawn_pattern("C_DOWN", false)
+	spawn_pattern("H_DOWN", true)
 	await get_tree().create_timer(4.0).timeout
 	
 	# C subindo Esquerda
-	spawn_pattern("C_UP", true)
+	spawn_pattern("V_UP", false)
 	await get_tree().create_timer(4.0).timeout
 	
 	# C subindo Direita
-	spawn_pattern("C_UP", false)
+	spawn_pattern("H_UP", false)
 
 func _process(_delta):
 	if not client and server.is_connection_available():

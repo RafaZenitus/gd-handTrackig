@@ -10,6 +10,7 @@ radius = 55.0091
 script = ExtResource("1_5xxd7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.999993, 0.472947, 0.448782, 1)
 texture_filter = 1
 scale = Vector2(8, 8)
 texture = ExtResource("1_001gp")
