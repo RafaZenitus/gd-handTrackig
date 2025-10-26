@@ -1,0 +1,192 @@
+[gd_scene load_steps=12 format=3 uid="uid://cnbnofl36wfpk"]
+
+[ext_resource type="Script" uid="uid://dtxvygis87p0d" path="res://main_menu/main_menu.gd" id="1_3shxk"]
+[ext_resource type="Texture2D" uid="uid://bo5oc502lnto7" path="res://assets/windrise-bg-sky.png" id="1_d3a7t"]
+[ext_resource type="FontFile" uid="uid://cgaio2xcrk44n" path="res://assets/retro-pixel-thick.ttf" id="2_3shxk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3shxk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d3a7t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3a7t"]
+bg_color = Color(0.893841, 0.760671, 0, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_color = Color(0, 0, 0, 0.666667)
+shadow_size = 8
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3shxk"]
+bg_color = Color(1, 0.836833, 0.11, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_color = Color(0, 0, 0, 0.666667)
+shadow_size = 8
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bws42"]
+bg_color = Color(0.98438, 0.815719, 1.15514e-06, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_color = Color(0, 0, 0, 0.666667)
+shadow_size = 8
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6tl50"]
+bg_color = Color(0.8, 0.293333, 0, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_color = Color(0, 0, 0, 0.666667)
+shadow_size = 8
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6bnd"]
+bg_color = Color(0.980392, 0.294118, 0, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_color = Color(0, 0, 0, 0.666667)
+shadow_size = 8
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3f7m4"]
+bg_color = Color(0.98, 0.294, 0, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_color = Color(0, 0, 0, 0.666667)
+shadow_size = 8
+shadow_offset = Vector2(0, 4)
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3shxk")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_3shxk")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_d3a7t")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 64
+theme_override_fonts/font = ExtResource("2_3shxk")
+theme_override_font_sizes/font_size = 168
+text = "P.O.S.E"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Separator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Separator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(550, 164)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0.823529, 0.192157, 0.933333)
+theme_override_colors/font_pressed_color = Color(0, 1, 0.192157, 0.933333)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("2_3shxk")
+theme_override_font_sizes/font_size = 128
+theme_override_styles/focus = SubResource("StyleBoxEmpty_d3a7t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3a7t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3shxk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bws42")
+text = "INICIAR
+"
+
+[node name="Exit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(550, 164)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0.788235, 0.192157, 0.933333)
+theme_override_colors/font_pressed_color = Color(0, 1, 0.192157, 0.933333)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("2_3shxk")
+theme_override_font_sizes/font_size = 128
+theme_override_styles/focus = SubResource("StyleBoxEmpty_d3a7t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6tl50")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_t6bnd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3f7m4")
+text = "SAIR"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

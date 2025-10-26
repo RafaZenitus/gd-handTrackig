@@ -1,21 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://dnrg5h0j8ybwr"]
 
-[ext_resource type="Texture2D" uid="uid://cj4ns26g68jpb" path="res://assets/back1.png" id="1_guqqy"]
 [ext_resource type="Script" uid="uid://d2sm64iiibedd" path="res://scenes/Hand.gd" id="1_nnpv6"]
+[ext_resource type="Texture2D" uid="uid://c81r8xit2j4q7" path="res://assets/back1_red.png" id="2_nnpv6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nnpv6"]
 radius = 56.0
 
 [node name="Left_" type="Area2D"]
 script = ExtResource("1_nnpv6")
+is_left_hand = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.163404, 0.907074, 1, 1)
 texture_filter = 1
 scale = Vector2(8, 8)
-texture = ExtResource("1_guqqy")
+texture = ExtResource("2_nnpv6")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -1)
+position = Vector2(3, 5)
 shape = SubResource("CircleShape2D_nnpv6")

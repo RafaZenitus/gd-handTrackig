@@ -4,6 +4,8 @@ class_name Hand
 
 var target_position: Vector2
 
+@export var is_left_hand: bool = false
+
 # smoothing_speed > mão mais rápido 
 # smoothing_speed < mais suave.
 var smoothing_speed := 0.1
