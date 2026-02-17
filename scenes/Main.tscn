@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bgj03ik4lwj84"]
+[gd_scene load_steps=12 format=3 uid="uid://bgj03ik4lwj84"]
 
 [ext_resource type="Script" uid="uid://dowkw83t3116r" path="res://scenes/Main.gd" id="1_0bbpv"]
 [ext_resource type="PackedScene" uid="uid://mqnr05oawhn7" path="res://scenes/right_.tscn" id="2_wp0k4"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b6wl6oiab8pim" path="res://assets/windrise-bg-cliff.png" id="5_jlsqs"]
 [ext_resource type="Texture2D" uid="uid://c3d65kfdugdwb" path="res://assets/windrise-bg-sky-v5.png" id="5_q8u5g"]
 [ext_resource type="Texture2D" uid="uid://c1lntixtrn4vn" path="res://assets/windrise-bg-front.png" id="7_q8u5g"]
+[ext_resource type="FontFile" uid="uid://1bsdygird0l0" path="res://assets/retro-pixel-font-ttf-v2025.10.20/arcade/retro-pixel-arcade.ttf" id="10_lhr70"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q8u5g"]
 shader = ExtResource("4_jlsqs")
@@ -59,3 +60,18 @@ texture_filter = 1
 position = Vector2(960.687, 886.75)
 scale = Vector2(3.76294, 4.61585)
 texture = ExtResource("7_q8u5g")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1740.0
+offset_top = 28.0
+offset_right = 1872.0
+offset_bottom = 88.0
+grow_horizontal = 0
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("10_lhr70")
+theme_override_font_sizes/font_size = 40
+text = "000"

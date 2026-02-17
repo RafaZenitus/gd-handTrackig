@@ -5,7 +5,7 @@ class_name Coin
 signal on_coin_collected
 
 @export var max_scale: float = 1.0
-@export var growth_speed: float = 0.3
+var growth_speed: float = 0.3
 @export var collectible_scale: float = 0.5
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
@@ -15,7 +15,9 @@ var current_scale: float = 0.0
 
 var color_mode: int = 1
 
-
+func set_growth_speed(speed: float):
+	growth_speed = speed
+	print("Moeda spawnada com speed: ", "%.1f" % growth_speed)
 
 func _ready() -> void:
 	anim.play("spin")
@@ -74,8 +76,8 @@ func _on_area_entered(area: Area2D) -> void:
 	# Lógica de Restrição de Mão
 	match color_mode:
 		1: can_be_collected = true
-		2: can_be_collected = (hand_node.is_left_hand == false)
-		3: can_be_collected = (hand_node.is_left_hand == true)
+		2: can_be_collected = (hand_node.is_left_hand == true)
+		3: can_be_collected = (hand_node.is_left_hand == false)
 	
 	# Execução da Coleta
 	if can_be_collected:

@@ -14,7 +14,8 @@ func _process(delta: float) -> void:
 func _on_start_pressed() -> void:
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finishes
-	get_tree().change_scene_to_file("res://scenes/Main.tscn")
+	get_tree().change_scene_to_file("res://selection_menu/selection_menu.tscn")
+	#get_tree().change_scene_to_file("res://scenes/Main.tscn")
 
 
 func _on_exit_pressed() -> void:
